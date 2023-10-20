@@ -1,5 +1,5 @@
-create database films;
-drop database films;
+-- create database films;
+-- drop database films;
 create database AppDatabase;
 
 create table catalogue

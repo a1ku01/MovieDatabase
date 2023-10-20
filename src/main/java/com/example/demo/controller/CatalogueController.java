@@ -13,7 +13,7 @@ public class CatalogueController {
 
     private final CatalogueRepository catalogueRepository;
 
-    @GetMapping(path = "catalogue")
+    @GetMapping(path = "/api/catalogue")
     public List<Catalogue> getFullCatalogue() {
         return catalogueRepository.getAll();
     }

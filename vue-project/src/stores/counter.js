@@ -1,12 +1,17 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import {ref} from 'vue'
+import {defineStore} from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+export const useCounterStore = defineStore('movieStore', {
+    state: () => ({
+        movies: [],
+    }),
+    getters: {},
+    actions: {
+        async fetchData() {
+            const response = await fetch('/api/catalogue')
+            this.movies = await response.json()
 
-  return { count, doubleCount, increment }
+        },
+    },
 })
+
