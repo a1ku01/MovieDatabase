@@ -18,7 +18,7 @@ fetchData()
 
 <template>
   <div class="about">
-    <h1>Films</h1>
+    <h1></h1>
     <ul>
       <li v-for ="(film, index) in store.movies" :key="index">
         {{film}}
@@ -29,11 +29,5 @@ fetchData()
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+
 </style>
