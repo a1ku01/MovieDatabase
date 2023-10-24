@@ -6,7 +6,9 @@ import {useCounterStore} from "@/stores/counter"
 const store = useCounterStore()
 
 const search = ref()
-const filtered = computed(() => store.filmByName(search.value))
+const filteredByName = computed(() => store.filmByName(search.value))
+//const filteredByGenre = computed() => store.filmByGenre(categoryGenre.value)
+
 
 async function fetchData() {
  await store.fetchData()
@@ -30,7 +32,7 @@ fetchData()
   <div>
   Search: <input type="text" v-model="search" id="search-input">
     <ul>
-      <li v-for ="(film, index) in filtered" :key="index">
+      <li v-for ="(film, index) in filteredByName" :key="index">
         {{film}}
       </li>
     </ul>
