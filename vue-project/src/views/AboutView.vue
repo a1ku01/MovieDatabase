@@ -1,24 +1,17 @@
 <script setup>
 
-import {ref} from "vue";
+import {ref, computed} from "vue";
 import {useCounterStore} from "@/stores/counter"
 
 const store = useCounterStore()
 
-let search = ref()
+const search = ref()
+const filtered = computed(() => store.filmByName(search.value))
 
 async function fetchData() {
  await store.fetchData()
 }
 fetchData()
-
-
-async function findFilmByName() {
-  //console.log(search.value)
-  let filtered = await store.findFilmByName(search.value)
-  console.log(filtered)
-}
-
 
 
 
@@ -35,17 +28,15 @@ async function findFilmByName() {
   </div>
 
   <div>
-  <input type="text" v-model="search" id="search-input">
-  <button @click="findFilmByName()">Search</button>
-  </div>
-
-  <div>
+  Search: <input type="text" v-model="search" id="search-input">
     <ul>
-      <li v-for ="(film, index) in store.filteredNames" :key="index">
+      <li v-for ="(film, index) in filtered" :key="index">
         {{film}}
       </li>
     </ul>
   </div>
+
+
 
 </template>
 
