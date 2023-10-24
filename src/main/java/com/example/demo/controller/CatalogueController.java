@@ -14,8 +14,9 @@ public class CatalogueController {
     private final CatalogueRepository catalogueRepository;
 
     @GetMapping(path = "/api/catalogue")
-    public List<Catalogue> getFullCatalogue() {
-        return catalogueRepository.getAll();
+    public List <CatalogueDto>  getFullCatalogue() {
+        return catalogueRepository.getAll().stream()
+                .map(CatalogueMapper.INSTANCE::toCatalogueDto)
+                .toList();
     }
-
 }
