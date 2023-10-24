@@ -2,9 +2,14 @@
 -- drop database films;
 create database AppDatabase;
 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+select uuid_generate_v4();
+
 create table catalogue
 (
     id          serial primary key,
+    film_unique_id uuid DEFAULT uuid_generate_v4(),
     name        text     not null,
     year        smallint not null,
     genre       text     not null,
@@ -12,6 +17,7 @@ create table catalogue
     director    text     not null,
     actors      text     not null
 );
+
 
 insert into catalogue(name, year, genre, description, director, actors)
 values ('The Matrix',
@@ -71,5 +77,9 @@ values ('The Matrix',
 
 
 select * from catalogue;
+
+
+
+
 
 
