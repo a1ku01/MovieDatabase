@@ -12,12 +12,12 @@ const movieStore = useCounterStore()
   <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
 
 
-  <div v-for="movie in movieStore.movies" :key="movie.film_unique_id">
+  <div v-for="movie in movieStore.movies" :key="movie.uuid">
     <div
         class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
 
       <p>{{ movie.name }}</p>
-      <img :src="movieImageUrls[movie.film_unique_id]" :alt="movie.name"
+      <img :src="movieImageUrls[movie.uuid]" :alt="movie.name"
            class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
 
 

@@ -14,7 +14,7 @@ public class Catalogue {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "catalogue_id")
     @SequenceGenerator(name="catalogue_id", sequenceName = "catalogue_id_seq", allocationSize=1)
     private Integer id;
-    private String film_unique_id;
+    private String uuid;
     private String name;
     private Integer year;
     private String genre;
