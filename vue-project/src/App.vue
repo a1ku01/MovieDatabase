@@ -6,7 +6,7 @@ import Films from './components/Films.vue'
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/films">Films</RouterLink>
+    <RouterLink to="/film/:name">Films</RouterLink>
     <RouterLink to="/about">About</RouterLink>
 
   </nav>
@@ -22,7 +22,6 @@ import Films from './components/Films.vue'
 -->
   <RouterView />
 </template>
-
 <style scoped>
 header {
   line-height: 1.5;

@@ -19,11 +19,11 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/films',
-      name: 'films',
-      component: FilmsView
+      path: '/film/:name',
+      name: 'film',
+      component: () => import('../views/FilmsView.vue')
     }
   ]
 })
-
 export default router
+
