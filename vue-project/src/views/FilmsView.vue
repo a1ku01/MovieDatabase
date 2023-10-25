@@ -3,7 +3,9 @@ import Films from '../components/Films.vue'
 </script>
 
 <template>
+
   <main>
-    <Films />
+    <Films/>
   </main>
+
 </template>

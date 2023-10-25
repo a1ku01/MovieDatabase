@@ -24,8 +24,8 @@ export const useCounterStore = defineStore('movieStore', {
             this.movies = await response.json()
         },
 
-        async selectMovie(){
-             this.selectedMovie = state.movie
+        async setSelectedMovie(movie){
+             this.selectedMovie = movie
         }
 
     }
