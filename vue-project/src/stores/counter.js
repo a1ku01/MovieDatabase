@@ -6,18 +6,11 @@ export const useCounterStore = defineStore('movieStore', {
         selectedMovie: null,
     }),
     getters: {
-        filmByName: (state) => {
-            //let nameQuery = ""
-            return (nameQuery) => state.movies.filter(movie => movie.name.toLowerCase().includes(nameQuery?.toLowerCase()))
-        },
-
-        filmByGenre: (state) => {
-           return (genreQuery) => state.movies.filter(movie => movie.genre === genreQuery)
-       }
-
+        filteredMovies: (state) => {
+            return (nameQuery) => state.movies
+                .filter(movie => !nameQuery || movie.name.toLowerCase().includes(nameQuery?.toLowerCase()))
+        }
     },
-
-
     actions: {
         async fetchData() {
             const response = await fetch('/api/catalogue')
