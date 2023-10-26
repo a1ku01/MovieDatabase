@@ -7,8 +7,10 @@ export const useCounterStore = defineStore('movieStore', {
     }),
     getters: {
         filteredMovies: (state) => {
-            return (nameQuery) => state.movies
-                .filter(movie => !nameQuery || movie.name.toLowerCase().includes(nameQuery?.toLowerCase()))
+            return (nameFilter, genreFilter, yearFilter) => state.movies
+                .filter(movie => !nameFilter || movie.name.toLowerCase().includes(nameFilter?.toLowerCase()))
+                .filter(movie => !genreFilter || movie.genre.toLowerCase().includes(genreFilter?.toLowerCase()))
+                .filter(movie => !yearFilter || movie.year === Number(yearFilter)) // 2001 != '2001'
         }
     },
     actions: {

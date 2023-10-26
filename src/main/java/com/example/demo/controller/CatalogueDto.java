@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-public record CatalogueDto (String uuid,
+public record CatalogueDto (String id,
+                            String uuid,
                             String name,
                             Integer year,
                             String genre,

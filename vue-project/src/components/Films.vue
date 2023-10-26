@@ -1,4 +1,5 @@
 <script setup>
+import '@/assets/filmsStyle.css'
 import {computed} from 'vue'
 import {useCounterStore} from "@/stores/counter";
 import {movieImageUrls} from "@/constants"
@@ -11,16 +12,20 @@ const selectedMovie = computed(() => store.selectedMovie)
 </script>
 
 <template>
-
+  <div class="movie-banner">
+    <img :src="movieImageUrls[selectedMovie.uuid]" :id="selectedMovie.uuid" :alt="selectedMovie.name"
+         class="movie-poster"/>
   <div>
-    <h1>{{selectedMovie.name}}</h1>
+    <img :src="movieImageUrls[selectedMovie.uuid]" :id="selectedMovie.uuid" :alt="selectedMovie.name"
+         class="movie-backdrop"/>
   </div>
-
-  <div>
-      <img :src="movieImageUrls[selectedMovie.uuid]" :id="selectedMovie.uuid" :alt="selectedMovie.name"
-           class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
+  <div class="movie-detail">
+    <div class="movie-heading">
+      <h1>{{ selectedMovie.name }}</h1>
     </div>
-
-  <div>
+    <div class="movie-text">
+      <p>{{ selectedMovie.description }}</p>
+    </div>
+  </div>
   </div>
 </template>
