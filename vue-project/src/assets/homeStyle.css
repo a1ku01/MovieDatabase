@@ -1,0 +1,77 @@
+.home-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.home-list .movie {
+    width: 300px;
+    margin: 10px;
+    background-color: black;
+    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.image {
+    width: 100%;
+    height: 400px;
+    align-items: center;
+}
+
+.home-list .movie .image {
+    color: chocolate;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.0rem 0.0rem 0.0rem;
+    letter-spacing: 5px;
+}
+
+.home-list .movie .movie-info span {
+    background-color: coral;
+    padding: 0.25em .5rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.description {
+    color: black;
+    font-size: 10px;
+}
+
+.heading {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.home-list .movie .description {
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    transform: translateY(101%);
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+}
+
+.home-list .movie:hover .description {
+    transform: translateY(0%);
+}

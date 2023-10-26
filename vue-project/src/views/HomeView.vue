@@ -1,14 +1,25 @@
 <script setup>
-
+import '@/assets/homeStyle.css'
 import {useCounterStore} from "@/stores/counter"
 import {movieImageUrls} from "@/constants"
 import {ref, computed} from "vue";
 import router from "@/router";
+import SearchFilterGenre from '../components/SearchFilterGenre.vue'
+import SearchFilterYear from '../components/SearchFilterYear.vue'
 
 const movieStore = useCounterStore()
-const nameQuery = ref()
+const nameFilter = ref()
+const genreFilter = ref()
+const yearFilter = ref()
 
-const filteredMovies = computed(() => movieStore.filteredMovies(nameQuery.value))
+function setGenreFilter(genre) {
+  genreFilter.value = genre
+}
+function setYearFilter(year) {
+  yearFilter.value = year
+}
+
+const filteredMovies = computed(() => movieStore.filteredMovies(nameFilter.value, genreFilter.value, yearFilter.value))
 
 async function fetchData() {
   await movieStore.fetchData()
@@ -29,21 +40,39 @@ function selectMovie(movie) {
 </script>
 
 <template>
-  <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+  <div>
+    Search: <input type="text" v-model="nameFilter" id="search-input">
 
-    <div>
-      Search: <input type="text" v-model="nameQuery" id="search-input" @input = "filter">
+    <SearchFilterGenre @change-genre="(eventValue) => setGenreFilter(eventValue)"/>
+
+    <SearchFilterYear @change-year="(eventValue) => setYearFilter(eventValue)"/>
+
+  </div>
+
+  <div class="home-list">
+
+
+    <div v-for="movie in filteredMovies" :key="movie.uuid">
+      <div
+          class="movie">
+
+
+        <img @click="selectMovie(movie)" :src="movieImageUrls[movie.uuid]" :id="movie.uuid" :alt="movie.name"
+             class="image"/>
+        <div class="heading">
+          <p>{{ movie.name }}</p>
+
+          <div class="description">
+            <p>{{ movie.description }}</p>
+          </div>
+          <div class="year">
+            <p>{{ movie.year }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  <div v-for="movie in filteredMovies" :key="movie.uuid">
-    <div
-        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-      <p>{{ movie.name }}</p>
+  </div>
 
-     <img @click="selectMovie(movie)" :src="movieImageUrls[movie.uuid]" :id="movie.uuid" :alt="movie.name"
-            class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
-</div>
-</div>
-</div>
 
 
 
