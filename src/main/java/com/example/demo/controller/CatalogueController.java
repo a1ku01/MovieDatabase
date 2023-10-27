@@ -20,4 +20,5 @@ public class CatalogueController {
                 .map(CatalogueMapper.INSTANCE::toCatalogueDto)
                 .toList();
     }
+
 }
