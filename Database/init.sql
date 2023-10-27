@@ -8,13 +8,22 @@ drop table catalogue;
 create table catalogue
 (
     id          serial primary key,
-    uuid        text not null,
+    uuid        text     not null,
     name        text     not null,
     year        smallint not null,
     genre       text     not null,
     description text     not null,
     director    text     not null,
     actors      text     not null
+);
+
+drop table if exists comments;
+drop table if exists comment;
+create table comment
+(
+    id           serial primary key,
+    catalogue_id integer not null references catalogue (id),
+    comment      text
 );
 
 
@@ -85,7 +94,8 @@ values ('7d06dff4-aa68-4a78-817a-16d2dee204f2',
         'Jonny Lee Miller, Angelina Jolie, Jesse Bradford');
 
 
-select * from catalogue;
+select *
+from catalogue;
 
 
 
