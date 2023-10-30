@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CommentRepository extends CrudRepository<Comment, Integer> {
 
-    @Query(value = "select * from comments", nativeQuery = true)
-    List<Comment> getAll();
+    @Query(value = "select * from comment where catalogue_id = ?", nativeQuery = true)
+    List<Comment> getMovieComment(Long movieId);
 }

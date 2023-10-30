@@ -38,8 +38,10 @@ public class CommentController {
     private final CommentRepository commentRepository;
 
     @GetMapping("movies/{movieId}/comments")
-    public List <CommentDto>  getAllComments() {
-        return commentRepository.getAll().stream()
+    public List <CommentDto> getComments(
+            @PathVariable("movieId") Long catalogueId
+    ) {
+        return commentRepository.getMovieComment(catalogueId).stream()
                 .map(CommentMapper.INSTANCE::toCommentDto)
                 .toList();
     }
