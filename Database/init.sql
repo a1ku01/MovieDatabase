@@ -98,7 +98,4 @@ select *
 from catalogue;
 
 
-
-
-
-
+select * from comment where catalogue_id = 7
