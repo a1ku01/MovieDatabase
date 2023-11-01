@@ -12,7 +12,7 @@
 
 .home-list .movie {
     width: 300px;
-    margin: 10px;
+    margin: 15px;
     background-color: black;
     -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -50,19 +50,21 @@
 
 .description {
     color: black;
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .heading {
     color: white;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
 }
 
 .home-list .movie .description {
     background-color: #fff;
     padding: 2rem;
     position: absolute;
+    text-align: justify;
     left: 0;
     right: 0;
     bottom: 0;

@@ -15,13 +15,17 @@
     <option value="Drama">Drama</option>
     <option value="Biography">Biography</option>
     <option value="Action">Action</option>
+    <option value="Documentary">Documentary</option>
+    <option value="Horror">Horror</option>
+    <option value="Crime">Crime</option>
+
   </select>
   </div>
 
 
+
 </template>
 <style scoped>
-
 
 </style>
 

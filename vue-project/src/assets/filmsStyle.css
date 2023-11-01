@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(187, 187, 187, 1) 30%, rgba(28, 28, 52, 1) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(155, 146, 146) 30%, rgb(35, 35, 44) 100%);
+
 }
 .movie-backdrop {
     position: absolute;
@@ -25,19 +26,23 @@
 }
 
 .movie-text {
+    margin-top: 20px;
     color: white;
-    margin-left: 40px;
+    font-size: 18px;
+    margin-left: 100px;
     height: 100%;
     position: relative;
     bottom: 0;
-    margin-right: 50px;
+    margin-right: 120px;
+    text-align: justify;
 }
 
 .movie-heading {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     margin-bottom: 7px;
     max-width: 60%;
     line-height: 100%;
-    margin-left: 40px;
+    margin-left: 100px;
+    text-align: justify;
 }

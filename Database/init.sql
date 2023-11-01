@@ -93,9 +93,63 @@ values ('7d06dff4-aa68-4a78-817a-16d2dee204f2',
         'Iain Softley',
         'Jonny Lee Miller, Angelina Jolie, Jesse Bradford');
 
+insert into catalogue(uuid, name, year, genre, description, director, actors)
+values ('c749e9de-c511-4db8-94b3-01d09ebdd70b',
+        'A.I.: Artificial Intelligence',
+        2001,
+        'Drama',
+        'A highly advanced robotic boy longs to become "real" so that he can regain the love of his human mother.',
+        'Steven Spielberg',
+        'Haley Joel Osment, Jude Law, Frances O''Connor'),
+       ('8d3520b9-3d4c-4954-85ed-f2cc0838b514',
+        'Source Code',
+        2011,
+        'Action',
+        'A soldier wakes up in someone else''s body and discovers he''s part of an experimental government program to find the bomber of a commuter train within 8 minutes.',
+        'Duncan Jones',
+        'Jake Gyllenhaal, Michelle Monaghan, Vera Farmiga'),
+       ('9f256e36-2b33-46ae-a5dc-1c4ca1f7c60f',
+        'Ex Machina',
+        2014,
+        'Sci-Fi',
+        'A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a highly advanced humanoid A.I.',
+        'Alex Garland',
+        'Alicia Vikander, Domhnall Gleeson, Oscar Isaac'),
+       ('fe24e5b8-b3b7-4c53-b68d-079548389e17',
+        'We Are Legion: The Story of the Hacktivists',
+        2012,
+        'Documentary',
+        'A documentary on the workings and beliefs of the self-described "hacktivist" collective, Anonymous.',
+        'Brian Knappenberger',
+        'Anon2World, Anonyops, Julian Assange'),
+       ('3e60a153-be50-443c-bf02-4d0a15f32b6e',
+        'Pirates of Silicon Valley',
+        1999,
+        'Biography',
+        'History of Apple and Microsoft',
+        'Martyn Burke',
+        'Anthony Michael Hall, Noah Wyle, Joey Slotnick'),
+       ('ca720012-ac64-4aa5-b29e-c1f8634e88df',
+        'Morgan',
+        2016,
+        'Horror',
+        'A corporate risk-management consultant must decide whether or not to terminate an artificially created humanoid being.',
+        'Luke Scott',
+        'Kate Mara, Anya Taylor-Joy, Rose Leslie'),
+       ('01d586d5-bfb5-4ce1-8ca5-65156f04cfab',
+        'Who Am I',
+        2014,
+        'Crime',
+        'Benjamin, a young German computer whiz, is invited to join a subversive hacker group that wants to be noticed on the world''s stage.',
+        'Baran bo Odar',
+        'Tom Schilling, Elyas M''Barek, Wotan Wilke Möhring');
 
 select *
 from catalogue;
 
 
-select * from comment where catalogue_id = 7
+select * from comment where catalogue_id = 7;
+
+update catalogue
+set description = 'Freedom fighters Neo, Trinity and Morpheus continue to lead the revolt against the Machine Army, unleashing their arsenal of extraordinary skills and weaponry against the systematic forces of repression and exploitation.'
+where name = 'The Matrix Reloaded';
