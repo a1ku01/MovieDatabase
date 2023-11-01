@@ -47,61 +47,35 @@ function selectMovie(movie) {
           for="search-bar">
         <input type="text" placeholder="Search movies" v-model="nameFilter" id="search-input"
                class="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white" required="">
-        <!--
-        <button type="submit"
-                class="w-full md:w-auto px-6 py-3 bg-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all">
 
-          <div class="flex items-center transition-all opacity-1">
-            <span class="text-sm font-semibold whitespace-nowrap truncate mx-auto">Search</span>
-          </div>
-        </button>
-        -->
       </label>
     </div>
     <div class="search1">
       <div class="mx-auto relative min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center gap-2">
         <SearchFilterGenre @change-genre="(eventValue) => setGenreFilter(eventValue)"/>
-
         <SearchFilterYear @change-year="(eventValue) => setYearFilter(eventValue)"/>
       </div>
     </div>
   </div>
 
-<!--
-  <div>
-    Search: <input type="text" v-model="nameFilter" id="search-input">
-
-    <SearchFilterGenre @change-genre="(eventValue) => setGenreFilter(eventValue)"/>
-
-    <SearchFilterYear @change-year="(eventValue) => setYearFilter(eventValue)"/>
-
-  </div>
--->
   <div class="home-list">
-
 
     <div v-for="movie in filteredMovies" :key="movie.uuid">
       <div
           class="movie">
 
-
         <img @click="selectMovie(movie)" :src="movieImageUrls[movie.uuid]" :id="movie.uuid" :alt="movie.name"
              class="image"/>
         <div class="heading">
           <p>{{ movie.name }}</p>
+          <p>({{ movie.year }})</p>
 
           <div class="description">
-            <p>{{ movie.description }}</p>
-          </div>
-          <div class="year">
-            <p>{{ movie.year }}</p>
+            <p>{{ movie.description}}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
 
 </template>

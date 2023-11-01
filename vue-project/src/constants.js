@@ -11,4 +11,12 @@ export const movieImageUrls = {
     'ce3a18e4-b15a-4f74-9402-3c8b0814db5c': 'https://m.media-amazon.com/images/I/81Zc1Xgz7zL._AC_UF1000,1000_QL80_.jpg',
     '20976a0a-172a-45bf-90a1-0ad88396cfac': 'https://m.media-amazon.com/images/M/MV5BMTg2MzYzNzgzOF5BMl5BanBnXkFtZTgwOTg4NzQ4OTE@._V1_.jpg',
     '831d1722-c350-48b0-b06d-65fe0150e662': 'https://m.media-amazon.com/images/I/81f0DSetYvL._AC_UF1000,1000_QL80_.jpg',
+    'c749e9de-c511-4db8-94b3-01d09ebdd70b': 'https://m.media-amazon.com/images/M/MV5BNWU2NzEyMDYtM2MyOS00OGM3LWFkNzAtMzRiNzE2ZjU5ZTljXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg',
+    '8d3520b9-3d4c-4954-85ed-f2cc0838b514': 'https://m.media-amazon.com/images/M/MV5BMTY0MTc3MzMzNV5BMl5BanBnXkFtZTcwNDE4MjE0NA@@._V1_.jpg',
+    '9f256e36-2b33-46ae-a5dc-1c4ca1f7c60f': 'https://m.media-amazon.com/images/M/MV5BMTUxNzc0OTIxMV5BMl5BanBnXkFtZTgwNDI3NzU2NDE@._V1_.jpg',
+    'fe24e5b8-b3b7-4c53-b68d-079548389e17': 'https://m.media-amazon.com/images/M/MV5BMzU4NjU1NDQwMF5BMl5BanBnXkFtZTcwNDg4NjI0OA@@._V1_FMjpg_UX1000_.jpg',
+    '3e60a153-be50-443c-bf02-4d0a15f32b6e': 'https://m.media-amazon.com/images/M/MV5BNDc2NTE0NzE4N15BMl5BanBnXkFtZTgwMDQ5MzgwMzE@._V1_FMjpg_UX1000_.jpg',
+    'ca720012-ac64-4aa5-b29e-c1f8634e88df': 'https://m.media-amazon.com/images/M/MV5BMjA1MjYyNDkxN15BMl5BanBnXkFtZTgwMTgxODAwOTE@._V1_FMjpg_UX1000_.jpg',
+    '01d586d5-bfb5-4ce1-8ca5-65156f04cfab': 'https://m.media-amazon.com/images/M/MV5BYmRiYjQ0OGQtYTAzMi00OGVjLWE4YTQtM2Q4YjBlZTBhMWM5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg',
+
 }
