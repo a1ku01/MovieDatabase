@@ -22,6 +22,7 @@ export const useCounterStore = defineStore('movieStore', {
         async setSelectedMovie(movie){
              this.selectedMovie = movie
         },
-    }
+    },
+    persist: true
 })
 

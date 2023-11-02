@@ -10,7 +10,6 @@ import Films from './components/Films.vue'
 
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/film/:name">Films</RouterLink>
     <RouterLink to="/about">About</RouterLink>
 
   </nav>

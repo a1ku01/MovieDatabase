@@ -26,6 +26,15 @@ create table comment
     comment      text
 );
 
+create table ratings
+(
+    id serial primary key,
+    catalogue_id integer not null references catalogue (id),
+    rating numeric
+);
+
+drop table rating;
+
 
 
 insert into catalogue(uuid, name, year, genre, description, director, actors)
@@ -146,6 +155,21 @@ values ('c749e9de-c511-4db8-94b3-01d09ebdd70b',
 
 select *
 from catalogue;
+
+select *
+from comment;
+
+select *
+from rating;
+
+
+
+select AVG(rating)::numeric(10,2)
+from rating;
+
+select round(avg(rating), 2) as average_rating
+from rating
+where catalogue_id = ?;
 
 
 select * from comment where catalogue_id = 7;
