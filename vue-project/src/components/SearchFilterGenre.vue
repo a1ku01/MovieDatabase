@@ -4,7 +4,7 @@
 
 <template>
 
-  <div>
+  <div class="text-black">
 
     Select genre: <select
       @change="$emit('changeGenre', $event.target.value)"> <!-- emit "changeGenre" = @change-genre -->

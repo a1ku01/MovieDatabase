@@ -6,25 +6,23 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(155, 146, 146) 30%, rgb(35, 35, 44) 100%);
-
 }
-.movie-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+.all-comments {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgb(155, 146, 146) 30%, rgb(35, 35, 44) 100%);
+    padding-left: 120px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
-
+.show-comment {
+    color: black;
+    padding-top: 50px;
+}
 .movie-poster {
     position: relative;
     width: 400px;
     height: auto;
     margin-left: 120px;
 }
-
 .movie-text {
     margin-top: 20px;
     color: white;
@@ -36,13 +34,14 @@
     margin-right: 120px;
     text-align: justify;
 }
-
 .movie-heading {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 7px;
-    max-width: 60%;
     line-height: 100%;
     margin-left: 100px;
     text-align: justify;
+    color: black;
+    margin-right: 120px;
 }
+

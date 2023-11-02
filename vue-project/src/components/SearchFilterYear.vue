@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="text-black">
 
     Select year: <select
       @change="$emit('changeYear', $event.target.value)">
