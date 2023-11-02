@@ -5,23 +5,21 @@ import {useCounterStore} from "@/stores/counter"
 
 const store = useCounterStore()
 
+const search = ref()
+const filteredByName = computed(() => store.filmByName(search.value))
+//const filteredByGenre = computed() => store.filmByGenre(categoryGenre.value)
+
 
 async function fetchData() {
  await store.fetchData()
 }
 fetchData()
 
+
+
 </script>
 
 <template>
-  <div class="about">
-    <h1></h1>
-    <ul>
-      <li v-for ="(film, index) in store.movies" :key="index">
-        {{film}}
-      </li>
-    </ul>
-  </div>
 
 </template>
 
