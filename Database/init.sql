@@ -26,7 +26,7 @@ create table comment
     comment      text
 );
 
-create table ratings
+create table rating
 (
     id serial primary key,
     catalogue_id integer not null references catalogue (id),

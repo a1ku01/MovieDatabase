@@ -5,7 +5,7 @@ import Films from './components/Films.vue'
 
 <template>
   <div class="header">
-    <a href="#default" class="logo">Logo</a>
+    <a href="/" class="logo">Logo</a>
     <div class="header-center">
 
   <nav>
@@ -21,7 +21,7 @@ import Films from './components/Films.vue'
 <style scoped>
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: white;
   padding: 20px 10px;
 }
 /* Style the header links */
@@ -29,11 +29,12 @@ import Films from './components/Films.vue'
   float: left;
   color: black;
   text-align: center;
+  font-weight: bold;
   padding: 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 25px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
