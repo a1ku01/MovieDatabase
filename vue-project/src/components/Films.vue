@@ -17,14 +17,20 @@ async function send() {
   const data = {
     comment: commentField.value
   }
-  const response = await fetch(`/api/movies/${selectedMovie.value.id}/comments`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json",},
-    body: JSON.stringify(data),
-  });
-  console.log(commentField.value)
-  showComment()
-  commentField.value = ""
+  if (!commentField.value){
+    alert("Comment field is empty")
+  } else if (commentField.value.length < 1000) {
+    const response = await fetch(`/api/movies/${selectedMovie.value.id}/comments`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json",},
+      body: JSON.stringify(data),
+    });
+    console.log(commentField.value)
+    showComment()
+    commentField.value = ""
+  } else {
+    alert("Comment is too long")
+  }
 }
 
 async function showComment() {
@@ -92,8 +98,9 @@ async function fetchRatingSum() {
   const response = await fetch(`/api/movies/${selectedMovie.value.id}/rating`)
   const average = await response.text();
   console.log(average)
-  averageRating.value = parseFloat(average)
-  console.log(averageRating.value)
+  if (average !== ""){
+    averageRating.value = parseFloat(average)
+  }
 }
 
 </script>
@@ -104,7 +111,7 @@ async function fetchRatingSum() {
          class="movie-poster"/>
 
     <div class="movie-detail">
-      <div class="movie-heading" style="font-family: 'Century Gothic'">
+      <div class="movie-heading">
         <h1>{{ selectedMovie.name }}</h1>
       </div>
       <div class="ratings-wrapper">

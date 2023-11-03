@@ -28,10 +28,7 @@ fetchData()
 
 
 function selectMovie(movie) {
-  //alert(uuid)
- // let image = document.getElementById(uuid);
- // let source = image.src;
- // window.open(source);
+
   movieStore.setSelectedMovie(movie)
   router.push({ path: `/film/` + movie.name})
 }
