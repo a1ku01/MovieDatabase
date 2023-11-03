@@ -5,12 +5,12 @@ import Films from './components/Films.vue'
 
 <template>
   <div class="header">
-    <a href="/" class="logo">Logo</a>
+    <a href="/"><img src="./assets/logol6puboss.png" alt="logo" width="324" height="126"></a>
     <div class="header-center">
 
   <nav>
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/about">User Profile</RouterLink>
 
   </nav>
     </div>
