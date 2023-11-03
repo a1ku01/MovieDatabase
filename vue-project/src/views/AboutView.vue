@@ -1,26 +1,25 @@
 <script setup>
-
-import {ref, computed} from "vue";
 import {useCounterStore} from "@/stores/counter"
 
 const store = useCounterStore()
 
-const search = ref()
-const filteredByName = computed(() => store.filmByName(search.value))
-//const filteredByGenre = computed() => store.filmByGenre(categoryGenre.value)
 
 
-async function fetchData() {
- await store.fetchData()
+import LoginSignupView from "@/views/LoginSignupView.vue";
+import {ref} from "vue";
+
+const showLogin = ref(false)
+function toggleLogin() {
+  showLogin.value = !showLogin.value
 }
-fetchData()
 
 
 
 </script>
 
 <template>
-
+  <button @click="toggleLogin">Login</button>
+  <LoginSignupView v-if="showLogin"/>
 </template>
 
 <style>

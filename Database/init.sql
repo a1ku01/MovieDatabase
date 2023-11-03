@@ -177,3 +177,14 @@ select * from comment where catalogue_id = 7;
 update catalogue
 set description = 'Freedom fighters Neo, Trinity and Morpheus continue to lead the revolt against the Machine Army, unleashing their arsenal of extraordinary skills and weaponry against the systematic forces of repression and exploitation.'
 where name = 'The Matrix Reloaded';
+
+create table userdata
+(
+    id serial primary key,
+    useremail text not null unique,
+    userpassword text not null,
+    useremailverified boolean default false,
+    usernickname text
+);
+
+drop table userdata;

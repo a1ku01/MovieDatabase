@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Films from './components/Films.vue'
+
 </script>
 
 <template>
